@@ -1,9 +1,9 @@
 <?php
 # Implementations
 # the back/router one is my router class
+include "api_config.php";
 require_once "back/vendor/autoload.php";
 require_once "back/router.php";
-require_once "api_config.php";
 require_once "back/src/utils.php";
 require "back/src/err_handling.php";
 
