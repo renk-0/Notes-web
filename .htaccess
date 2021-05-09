@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteBase /Notas
+
+RewriteRule ^(.*)$ index.php?q=$1 [L,QSA]

@@ -1,0 +1,22 @@
+:root {
+	--background: #282828;
+	--foreground: #ebdbb2;
+}
+
+body {
+	margin: 0;
+	color: var(--foreground);
+	background: var(--background);
+}
+
+#main {
+	width: 100vw;
+	height: 100vh;
+	min-width: 200px;
+	min-height: 300px;
+	padding: 1em;
+	box-sizing: border-box;
+}
+
+
+.hidden { display: none; }
