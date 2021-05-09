@@ -1,0 +1,66 @@
+.modal {
+	z-index: 10;
+	display: flex;
+	transition: all ease-in-out .1s;
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+}
+
+.modal-bg {
+	backdrop-filter: blur(4px);
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0, 0, 0, .4);
+	z-index: -1;
+}
+
+.modal-container {
+	flex: 0 1 auto;
+	overflow: hidden;
+	margin: auto;
+	border-radius: 10px;
+	background-color: var(--background);
+	border: 2px solid transparent;
+	border-color: var(--border-col);
+}
+
+.modal-head {
+	background-color: var(--snd-background);
+	border-bottom: 2px solid var(--border-col);
+}
+.modal-head h2 {
+	margin: 0;
+	padding: 20px;
+}
+
+.modal-body { padding: 20px; }
+.modal-body input { 
+	width: 100%;
+}
+
+.modal-footer {
+	padding: 10px;
+	border: 0 solid var(--border-col);
+	border-width: 2px 0 0 0;
+}
+
+.modal-footer.right { 
+	direction: rtl;
+}
+
+/* 
+ * modal
+ * -bg
+ * -container
+ * -head
+ * -body
+ * -footer
+ *
+ * btn-secondary
+ * btn-primary
+ *
+ * */

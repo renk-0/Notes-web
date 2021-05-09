@@ -1,0 +1,112 @@
+#main.svelte-1mvltt1{width:100vw;height:100vh;min-width:200px;min-height:300px;padding:1em;display:flex;flex-flow:column nowrap;box-sizing:border-box}.note_app_container.svelte-1mvltt1{margin:0 5%;margin-top:1rem;overflow:hidden;display:flex;box-sizing:border-box;border:2px solid var(--snd-border-col);border-radius:10px;height:100%;flex-flow:row wrap}.box_container.svelte-1hujwam{border:0 solid var(--snd-border-col);border-width:0 2px 0 0;background:var(--snd-background);flex:1 1 200px;height:100%;overflow:auto}.note_view.svelte-xr0wng{flex:10 1 400px;height:100%;display:flex;flex-flow:column nowrap}.edit_text.svelte-xr0wng{line-height:1.5em;resize:none;outline:none;color:var(--foreground)}.empty.svelte-xr0wng{font-weight:bold;display:flex;color:var(--snd-border-col);font-family:'Farro', sans-serif;font-size:1.6em}.empty_text.svelte-xr0wng{margin:auto}.text_container.svelte-xr0wng{height:100%;overflow:auto;background:var(--background);border:none;margin:0;box-sizing:border-box;width:100%;padding:10px 20px;color:var(--trd-foreground)}.box_header.svelte-1q12vea.svelte-1q12vea{color:var(--snd-foreground);transition:background ease-in-out .1s;display:flex;padding:10px 15px;align-items:center;user-select:none;cursor:pointer}.box_header.svelte-1q12vea .name.svelte-1q12vea{overflow:hidden;width:100%;text-overflow:ellipsis;white-space:nowrap}.box_header.selected.svelte-1q12vea.svelte-1q12vea{background:var(--aqua);color:var(--background);font-weight:bold}.box_content.svelte-1q12vea.svelte-1q12vea{transition:all ease-in-out .2s;opacity:0}.box_content.open.svelte-1q12vea.svelte-1q12vea{opacity:1}.gg-chevron-right.svelte-1q12vea.svelte-1q12vea{box-sizing:border-box;position:relative;display:inline-block;transform:scale(var(--ggs, 1));width:20px;height:20px;border:2px solid transparent;border-radius:100px;flex:0 0 auto}.gg-chevron-right.svelte-1q12vea.svelte-1q12vea::after{transition:all ease-in-out .1s;content:"";display:block;box-sizing:border-box;position:absolute;width:8px;height:8px;border-bottom:2px solid;border-right:2px solid;transform:rotate(-45deg);right:6px;top:5px
+	}.gg-chevron-right.chevron-down.svelte-1q12vea.svelte-1q12vea::after{transform:rotate(45deg);top:2px}.note_menu_bar.svelte-1id598k.svelte-1id598k{display:flex;padding:15px;border:0 solid var(--snd-border-col);border-bottom-width:2px}.save_button.svelte-1id598k.svelte-1id598k{color:var(--green);background:var(--snd-background);border-color:var(--green)}.switcher.svelte-1id598k.svelte-1id598k{display:inline-flex;border:2px solid var(--snd-border-col);border-radius:10px;overflow:hidden}.switcher.svelte-1id598k button.svelte-1id598k{transition:all ease-in-out 0.1s;border-radius:0;border:none;font-weight:normal}.switcher.svelte-1id598k .opt1.svelte-1id598k{border-right:2px solid var(--snd-border-col)}.switcher.svelte-1id598k button.selected.svelte-1id598k{background:var(--aqua);color:var(--background);font-weight:bold}/*
+
+Gruvbox style (dark) (c) Pavel Pertsev (original style at https://github.com/morhetz/gruvbox)
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #282828;
+}
+
+.hljs,
+.hljs-subst {
+  color: #ebdbb2;
+}
+
+/* Gruvbox Red */
+.hljs-deletion,
+.hljs-formula,
+.hljs-keyword,
+.hljs-link,
+.hljs-selector-tag {
+  color: #fb4934;
+}
+
+/* Gruvbox Blue */
+.hljs-built_in,
+.hljs-emphasis,
+.hljs-name,
+.hljs-quote,
+.hljs-strong,
+.hljs-title,
+.hljs-variable {
+  color: #83a598;
+}
+
+/* Gruvbox Yellow */
+.hljs-attr,
+.hljs-params,
+.hljs-template-tag,
+.hljs-type {
+  color: #fabd2f;
+}
+
+/* Gruvbox Purple */
+.hljs-builtin-name,
+.hljs-doctag,
+.hljs-literal,
+.hljs-number {
+  color: #8f3f71;
+}
+
+/* Gruvbox Orange */
+.hljs-code,
+.hljs-meta,
+.hljs-regexp,
+.hljs-selector-id,
+.hljs-template-variable {
+  color: #fe8019;
+}
+
+/* Gruvbox Green */
+.hljs-addition,
+.hljs-meta-string,
+.hljs-section,
+.hljs-selector-attr,
+.hljs-selector-class,
+.hljs-string,
+.hljs-symbol {
+  color: #b8bb26;
+}
+
+/* Gruvbox Aqua */
+.hljs-attribute,
+.hljs-bullet,
+.hljs-class,
+.hljs-function,
+.hljs-function .hljs-keyword,
+.hljs-meta-keyword,
+.hljs-selector-pseudo,
+.hljs-tag {
+  color: #8ec07c;
+}
+
+/* Gruvbox Gray */
+.hljs-comment {
+  color: #928374;
+}
+
+/* Gruvbox Purple */
+.hljs-link_label,
+.hljs-literal,
+.hljs-number {
+  color: #d3869b;
+}
+
+.hljs-comment,
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-section,
+.hljs-strong,
+.hljs-tag {
+  font-weight: bold;
+}
+.box_note.svelte-2n71vx{cursor:pointer;user-select:none;transition:all ease-in-out .1s;display:flex;padding:10px 15px;margin-left:1em;color:var(--snd-foreground)}.name.svelte-2n71vx{overflow:hidden;width:100%;text-overflow:ellipsis;white-space:nowrap}.box_note.select.svelte-2n71vx{background:var(--snd-border-col);color:var(--foreground);font-weight:bold}.gg-notes.svelte-2n71vx{flex:0 0 auto;box-sizing:border-box;position:relative;display:inline-block;transform:scale(var(--ggs,1));width:16px;height:18px;border:2px solid;border-radius:3px;margin-right:0.5em}.gg-notes.svelte-2n71vx::after,.gg-notes.svelte-2n71vx::before{content:"";display:block;box-sizing:border-box;position:absolute;border-radius:3px;height:2px;background:currentColor;left:2px}.gg-notes.svelte-2n71vx::before{box-shadow:0 4px 0;width:8px;top:2px
+	}.gg-notes.svelte-2n71vx::after{width:4px;top:10px
+	}

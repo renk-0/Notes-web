@@ -1,0 +1,4 @@
+back/vendor
+back/.env
+node_modules
+notes-front/note_modules

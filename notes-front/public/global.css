@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Farro&family=Roboto&display=swap');
+@import "modal.css";
+@import "markdown.css";
+/* 
+ * DOCUMENT GLOBAL STYLING
+ * */
+:root {
+	--background: #282828;
+	--foreground: #ebdbb2;
+	--border-col: #665c54;
+	--snd-background: #3c3836;
+	--snd-foreground: #bdae93;
+	--snd-border-col: #504945;
+	--blue: #458588;
+	--aqua: #8ec07c;
+	--green: #b8bb26;
+	--trd-foreground: #d5c4a1;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	margin: 0;
+	color: var(--foreground);
+	background: var(--background);
+}
+
+
+.hidden { display: none; }
+
+
+/* 
+ * INPUT GLOBAL STYLING 
+ * */
+.input { position: relative; }
+.input > label:first-child {
+	color: var(--snd-foreground);
+	font-size: 12px;
+	display: inline-block;
+	position: absolute;
+	top: -8px;
+	left: 10px;
+	font-weight: bold;
+	padding: 3px;
+ 	/* background: var(--background); */
+}
+
+input[type="text"] {
+	transition: border-color ease-in-out .2s;
+	outline: none;
+	box-sizing: border-box;
+	padding: 10px;
+	font-size: 18px;
+	font-family: 'Roboto', sans-serif;
+	margin: 0;
+	border-radius: 5px;
+	border: 2px solid var(--snd-border-col);
+	background: var(--snd-background);
+	color: var(--snd-foreground);
+}
+
+input[type="text"]:focus {
+	color: var(--foreground);
+	border-color: var(--border-col);
+}
+
+/* 
+ * BASIC OBJECTS STYLES
+ * */
+
+button {
+	user-select: none;
+	cursor: pointer;
+	border: 2px solid var(--border-col);
+	padding: 10px 15px;
+	font-family: 'Farro', sans-serif;
+	border-radius: 6px;
+	background: var(--background);
+	color: var(--foreground);
+	font-weight: bold;
+}
+
+button[disabled] {
+	background: var(--snd-background);
+	color: var(--snd-foreground);
+	border-color: var(--snd-background);
+	cursor: not-allowed;
+}
+
+.expander {
+	flex: 100 1 auto;
+}
+
+/* 
+ * COLORS STYLES
+ * */
+.primary {
+	background: var(--blue);
+	color: var(--foreground);
+}
+
+
+/*
+ * SCROLLBAR CONFIG
+ * */ 
+
+*::-webkit-scrollbar {
+	width: 10px;
+}
+*::-webkit-scrollbar-track {
+	background: var(--border-col);
+}
+*::-webkit-scrollbar-thumb {
+	background: var(--snd-border-col);
+}
+
