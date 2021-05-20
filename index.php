@@ -1,7 +1,6 @@
 <?php
 # Implementations
 # the back/router one is my router class
-include "api_config.php";
 require_once "back/vendor/autoload.php";
 require_once "back/router.php";
 require_once "back/src/utils.php";
@@ -25,7 +24,7 @@ Router::add("getBoxes", function(){
 Router::add("addBox", function() {
 	require_once "back/src/boxes_model.php";
 	require_once "back/src/boxes.php";
-
+	
 	$data = get_Json();
 	if(checkFields($data, ["name"])) {
 		$box = new Box($data);

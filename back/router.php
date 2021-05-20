@@ -1,4 +1,5 @@
 <?php
+
 class Router {
 	static private $routes = [];
 	static public $not_found = null;
@@ -11,6 +12,7 @@ class Router {
 	}
 
 	static public function eval($METHOD, $ROUTE) {
+		include "api_config.php";
 		if(isset(self::$routes[$ROUTE])) {
 			$route = self::$routes[$ROUTE];
 			$METHOD = strtolower($METHOD);
@@ -18,7 +20,13 @@ class Router {
 			if($METHOD === $method) {
 				call_user_func($route["func"], null);
 				exit;
+			} else {
+				# echo $METHOD;
+				exit;
 			}
+		} else {
+			# print_r($ROUTE);
+			exit;
 		}
 		http_response_code(404);
 		if(!is_null(self::$not_found))

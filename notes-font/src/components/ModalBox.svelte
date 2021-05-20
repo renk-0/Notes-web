@@ -9,11 +9,7 @@
 	function createBox() {
 		let name = val.value;
 		if(name.length > 0) {
-			axios({
-				url: "http://localhost/Notas/addBox", 
-				method: "post",
-				data: { name }
-			})
+			axios.post("http://localhost/Notas/addBox", { name })
 				.then(resp => {
 					dispatcher("added", {
 						id: resp.data,
