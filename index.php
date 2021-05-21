@@ -1,5 +1,7 @@
 <?php
 header('Access-Control-Allow-Origin: *');
+header('Content-Type: application/json, application/x-www-form-urlencoded, multipart/form-data, text/plain');
+header('Access-Control-Request-Headers: Origin, X-Requested-With, Accept, Authorization, Content-Type');
 # Implementations
 # the back/router one is my router class
 require_once "back/vendor/autoload.php";

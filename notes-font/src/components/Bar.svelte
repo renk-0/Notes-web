@@ -10,5 +10,7 @@
 <div class="menu-bar">
 	<button class="secondary" on:click={folder}>New Folder</button>
 	<button class="primary" on:click={note}>New Note</button>
+	<!--
 	<button class="danger" on:click={_delete} >Delete current</button>
+	-->
 </div>
