@@ -1,9 +1,7 @@
 <?php
-header('Access-Control-Allow-Origin: *');
-header('Content-Type: application/json, application/x-www-form-urlencoded, multipart/form-data, text/plain');
-header('Access-Control-Request-Headers: Origin, X-Requested-With, Accept, Authorization, Content-Type');
 # Implementations
 # the back/router one is my router class
+include "api_config.php";
 require_once "back/vendor/autoload.php";
 require_once "back/router.php";
 require_once "back/src/utils.php";
@@ -21,7 +19,7 @@ $ROUTE = $_GET["q"];
 
 Router::add("getBoxes", function(){
 	require_once "back/src/boxes.php";
-	\Boxes\getBoxes(0);
+	\Boxes\getBoxes();
 }, "get");
 
 Router::add("addBox", function() {
@@ -62,6 +60,15 @@ Router::add("getNotes", function() {
 	if(checkFields($data, ["box_id"])) 
 		\Notes\getNotes($data->box_id);
 	else 
+		Errs::fields_error();
+}, "get");
+
+Router::add("getNote", function() {
+	require_once "back/src/notes.php";
+	$data = get_Json();
+	if(checkFields($data, ["note_id"]))
+		\Notes\getNoteData($data->note_id);
+	else
 		Errs::fields_error();
 }, "get");
 

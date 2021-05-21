@@ -3,9 +3,8 @@ require_once "back/src/err_handling.php";
 use Errs;
 use mysqli;
 
-function getBoxes($page) {
-	$BOXES_RESULT = 10 * $page;
-	$QUERY = "select * from boxes limit ?, 10";
+function getBoxes() {
+	$QUERY = "select * from boxes;";
 	if($conn = new mysqli(
 		"localhost",
 		getenv("DB_USER"),

@@ -4,7 +4,7 @@ use Errs;
 use mysqli;
 
 function getNotes($box_id) {
-	$QUERY = "select * from notes where box=?;";
+	$QUERY = "select id, name from notes where box=?;";
 	if($conn = new mysqli("localhost",
 		getenv("DB_USER"),
 		getenv("DB_PASSWORD"),
@@ -12,6 +12,32 @@ function getNotes($box_id) {
 	)) {
 		if($stm = $conn->prepare($QUERY)) {
 			$stm->bind_param("i", $box_id);
+			if($stm->execute()) {
+				$data = [];
+				$result = $stm->get_result();
+				while($row = $result->fetch_assoc())
+					array_push($data, $row);
+				$stm->free_result();
+				echo json_encode($data);
+			} else
+				Errs::db_error();
+			$stm->close();
+		} else
+			Errs::db_error($conn->error);
+		$conn->close();
+	} else 
+		Errs::db_error($conn->error);	
+}
+
+function getNoteData($note_id) {
+	$QUERY = "select * from notes where id=?;";
+	if($conn = new mysqli("localhost",
+		getenv("DB_USER"),
+		getenv("DB_PASSWORD"),
+		getenv("DB_DATABASE")
+	)) {
+		if($stm = $conn->prepare($QUERY)) {
+			$stm->bind_param("i", $note_id);
 			if($stm->execute()) {
 				$data = [];
 				$result = $stm->get_result();
@@ -45,6 +71,8 @@ function addNote($note) {
 				$box);
 			if(!$stm->execute())
 				Errs::db_error($stm->error);
+			else
+				echo $stm->insert_id;
 			$stm->close();
 		} else 
 			Errs::db_error($conn->error);

@@ -17,16 +17,10 @@ class Router {
 			$METHOD = strtolower($METHOD);
 			$method = strtolower($route["method"]);
 			if($METHOD === $method) {
-				include "api_config.php";
 				call_user_func($route["func"], null);
 				exit;
-			} else {
-				# echo $METHOD;
+			} else if($METHOD == "options")
 				exit;
-			}
-		} else {
-			# print_r($ROUTE);
-			exit;
 		}
 		http_response_code(404);
 		if(!is_null(self::$not_found))
