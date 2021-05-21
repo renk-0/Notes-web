@@ -12,12 +12,12 @@ class Router {
 	}
 
 	static public function eval($METHOD, $ROUTE) {
-		include "api_config.php";
 		if(isset(self::$routes[$ROUTE])) {
 			$route = self::$routes[$ROUTE];
 			$METHOD = strtolower($METHOD);
 			$method = strtolower($route["method"]);
 			if($METHOD === $method) {
+				include "api_config.php";
 				call_user_func($route["func"], null);
 				exit;
 			} else {

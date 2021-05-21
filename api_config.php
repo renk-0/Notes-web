@@ -1,5 +1,4 @@
 <?php
-	header('Access-Control-Allow-Origin: *');
 	header('Content-Type: application/json, application/x-www-form-urlencoded, multipart/form-data, text/plain');
 	header('Access-Control-Allow-Credentials: true');
 	header('Access-Control-Request-Headers: Origin, X-Requested-With, Accept, Authorization, Content-Type');

@@ -1,4 +1,5 @@
 <?php
+header('Access-Control-Allow-Origin: *');
 # Implementations
 # the back/router one is my router class
 require_once "back/vendor/autoload.php";
