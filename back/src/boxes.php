@@ -12,7 +12,6 @@ function getBoxes() {
 		getenv("DB_DATABASE")
 	)) {
 		if($stm = $conn->prepare($QUERY)) {
-			$stm->bind_param("s", $BOXES_RESULT);
 			if($stm->execute()) { 
 				$data = [];
 				$result = $stm->get_result();

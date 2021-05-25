@@ -1,2 +1,4 @@
 back/vendor
 back/src/.env
+node_modules
+notes-front/note_modules

@@ -61,7 +61,7 @@ Router::add("getNotes", function() {
 		\Notes\getNotes($data->box_id);
 	else 
 		Errs::fields_error();
-}, "get");
+}, "post");
 
 Router::add("getNote", function() {
 	require_once "back/src/notes.php";
@@ -70,7 +70,7 @@ Router::add("getNote", function() {
 		\Notes\getNoteData($data->note_id);
 	else
 		Errs::fields_error();
-}, "get");
+}, "post");
 
 Router::add("addNote", function() {
 	require_once "back/src/notes.php";
@@ -89,9 +89,10 @@ Router::add("updateNote", function() {
 	require_once "back/src/notes_model.php";
 
 	$data = get_Json();
-	if(checkFields($data, ["note_id", "name", "content", "box_id"])) {
+	print_r($data);
+	if(checkFields($data, ["id", "name", "content", "box"])) {
 		$nNote = new \Notes\Note($data);
-		\Notes\updateNote($nNote, $data->note_id);
+		\Notes\updateNote($nNote, $data->id);
 	} else 
 		Errs::fields_error();
 }, "post");
