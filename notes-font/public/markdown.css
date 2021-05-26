@@ -37,3 +37,6 @@
 	border: 2px solid var(--border-col);
 }
 
+.preview th {
+	background: var(--snd-background);
+}
