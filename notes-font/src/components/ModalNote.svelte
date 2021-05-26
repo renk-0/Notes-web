@@ -35,8 +35,8 @@
 			</div>
 			<div class="modal-body">
 				<div class="input">
-					<label>Nombre de la nota</label>
-					<input required type="text" bind:this={noteName}>
+					<label for="note_name">Nombre de la nota</label>
+					<input id="note_name" required type="text" bind:this={noteName}>
 				</div>
 			</div>
 		<div class="modal-footer right">

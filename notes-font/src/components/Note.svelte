@@ -5,7 +5,6 @@
 	export let id, name;
 	let selected = false;
 	
-	export const deselect_note = () => select_note = false;
 	export const close_note = () => selected = false;
 	
 	function select_note() {

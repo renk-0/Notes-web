@@ -2,6 +2,15 @@
 	import NoteBar from "./NoteBar.svelte";
 	import axios from "axios";
 	import marked from "marked";
+	import hljs from "highlight.js";
+	import 'highlight.js/styles/gruvbox-dark.css';
+
+	marked.setOptions({
+		highlight: function(code, lang) {
+			const language = hljs.getLanguage(lang)? lang : "plaintext";
+			return hljs.highlight(code, { language }).value;
+		}
+	});
 
 	let editing = false;
 	let noteData;
@@ -22,11 +31,12 @@
 		on:changed_switch={toggle} />
 	{#if noteData}
 		{#if editing}
-			<textarea on:input={change_text} 
-				class="text_container edit_text">{noteData.content}</textarea>
+			<textarea class="text_container edit_text"
+				on:input={change_text}>{noteData.content}</textarea>
 		{:else}
-			<div class="text_container preview"
-			>{@html marked(noteData.content)}</div>
+			<div class="text_container preview">
+				{@html marked(noteData.content)}
+			</div>
 		{/if}
 	{:else}
 		<div class="text_container empty">
@@ -37,7 +47,8 @@
 
 <style>
 	.note_view {
-		flex: 10 1 500px;
+		flex: 10 1 400px;
+		height: 100%;
 		display: flex;
 		flex-flow: column nowrap;
 	}
@@ -58,13 +69,15 @@
 		margin: auto;
 	}
 	.text_container {
+		height: 100%;
 		overflow: auto;
 		background: var(--background);
 		border: none;
 		margin: 0;
 		box-sizing: border-box;
 		width: 100%;
-		height: 100%;
 		padding: 10px;
+		color: var(--trd-foreground);
 	}
+
 </style>

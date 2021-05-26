@@ -30,7 +30,7 @@
 	
 	function change_note(e) {
 		if(currentNote)
-			currentNote.toggle();
+			currentNote.close_note();
 		currentNote = this;
 		dispatch("view_note", e.detail);
 	}
@@ -38,9 +38,9 @@
 </script>
 
 <div on:click={open_box} class="box" class:selected={open}>
-	<div class="box_header" class:selected={open}>
+	<div date={creation} class="box_header" class:selected={open}>
 		<span class="gg-chevron-right" class:chevron-down={open}></span>
-		<span>{name}</span>
+		<span class="name">{name}</span>
 	</div>
 	<div class="box_content" class:open={open}>
 		{#if open}
@@ -60,6 +60,12 @@
 		align-items: center;
 		user-select: none;
 		cursor: pointer;
+	}
+	.box_header .name {
+		overflow: hidden;
+		width: 100%;
+		text-overflow: ellipsis;
+		white-space: nowrap;
 	}
 	.box_header.selected {
 		background: var(--aqua);

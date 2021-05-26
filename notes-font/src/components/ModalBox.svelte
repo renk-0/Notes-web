@@ -32,8 +32,8 @@
 			</div>
 			<div class="modal-body">
 				<div class="input">
-					<label>Nombre de la caja</label>
-					<input required type="text" bind:this={val}>
+					<label for="box_name">Nombre de la caja</label>
+					<input id="box_name" required type="text" bind:this={val}>
 				</div>
 			</div>
 		<div class="modal-footer right">

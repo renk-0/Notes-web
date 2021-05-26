@@ -50,7 +50,7 @@
 		border: 2px solid var(--snd-border-col);
 		border-radius: 10px;
 		height: 100%;
+		flex-flow: row wrap;
 	}
-
 </style>
 

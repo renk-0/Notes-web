@@ -36,7 +36,8 @@
 		border: 0 solid var(--snd-border-col);
 		border-width: 0 2px 0 0;
 		background: var(--snd-background);
-		flex: 1 1 auto;
+		flex: 1 1 200px;
+		height: 100%;
 		overflow: auto;
 	}
 </style>

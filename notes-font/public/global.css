@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Farro&family=Roboto&display=swap');
 @import "modal.css";
-
+@import "markdown.css";
 /* 
  * DOCUMENT GLOBAL STYLING
  * */
@@ -14,6 +14,7 @@
 	--blue: #458588;
 	--aqua: #8ec07c;
 	--green: #b8bb26;
+	--trd-foreground: #d5c4a1;
 }
 
 body {
