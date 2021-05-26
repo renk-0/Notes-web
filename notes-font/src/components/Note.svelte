@@ -20,7 +20,7 @@
 
 <div on:click={select_note} class="box_note" class:select={selected}>
 	<span class="gg-notes"></span>
-	<span>{name}</span>
+	<span class="name">{name}</span>
 </div>
 
 <style>
@@ -33,6 +33,14 @@
 		margin-left: 1em;
 		color: var(--snd-foreground);
 	}
+
+	.name {
+		overflow: hidden;
+		width: 100%;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
 	.box_note.select {
 		background: var(--snd-border-col);
 		color: var(--foreground);
