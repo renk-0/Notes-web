@@ -1,7 +1,10 @@
 # Notes program
-This is a localhost web notes program
+This is a useful localhost web notes Markdown based program  
+
+
 ## Usage
-First get dependencies in the backend
+First **clone** the repository from [here](https://github.com/Mkefs/Notes-web/tree/master/)
+in your localhost directory
 ```sh
 composer install
 ```
